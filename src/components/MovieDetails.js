@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 function MovieDetails() {
   const [movieInfo, setMovieInfo] = useState([]);
   const movieId = useParams();
-  console.log(movieInfo);
+  // console.log(movieInfo);
   useEffect(() => {
     axios
       .get(`http://www.omdbapi.com/?apikey=454ce2df&i=${movieId.id}`)
