@@ -10,10 +10,7 @@ function MovieDetails() {
       .get(
         `https://api.themoviedb.org/3/movie/${movieId.id}?api_key=09ed0b3699d91eb46176af38ea2466b5`
       )
-      .then((response) => {
-        console.log(response.data);
-        return setMovieInfo(response.data);
-      });
+      .then((response) => setMovieInfo(response.data));
   }, [movieId]);
   return (
     <>
@@ -55,7 +52,7 @@ function MovieDetails() {
             </Link>
             <button>
               <a
-                href={`https://www.imdb.com/title/${movieId.imdb_id}/`}
+                href={`https://www.imdb.com/title/${movieInfo.imdb_id}/`}
                 className="imdb"
                 target="/_blank"
               >
