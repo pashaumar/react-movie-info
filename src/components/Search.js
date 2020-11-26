@@ -7,8 +7,13 @@ function Search() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?apikey=454ce2df&s=${movieName}`)
-      .then((response) => setMovies(response.data.Search));
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=09ed0b3699d91eb46176af38ea2466b5&query=${movieName}`
+      )
+      .then((response) => {
+        console.log(response);
+        return setMovies(response.data.results);
+      });
   }, [movieName]);
   const handleSearchInput = (e) => {
     setSearchValue(e.target.value);
