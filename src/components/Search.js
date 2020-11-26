@@ -3,7 +3,7 @@ import Movies from "./Movies";
 import axios from "axios";
 function Search() {
   const [searchValue, setSearchValue] = useState("");
-  const [movieName, setMovieName] = useState("harry");
+  const [movieName, setMovieName] = useState("mission impossible");
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios
@@ -24,7 +24,7 @@ function Search() {
   };
   return (
     <>
-      <h1>Search For any Movie</h1>
+      <h1 className="search-movie-heading">Search For any Movie</h1>
       <div className="search-container">
         <input
           type="search"
